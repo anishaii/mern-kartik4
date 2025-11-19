@@ -3,9 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+       .card h1, h2{
+       color: red;
+       }
+
+       .card p{
+        color: blue;
+       }
+
+       #header h1{
+        color: yellow;
+       }
+
+       .box1> h1{
+        color: brown;
+       }
+
+       .button:enabled{
+        color: red;
+       }
+
+       button:hover{
+        background-color: pink;
+       }
+
+       li:nth-child(odd){
+        color: aqua;
+       }
+
+       .para::before{
+        content: 'Highlight';
+        color:red;
+       }
+
+
+      
+    </style>
 </head>
 <body>
-    
+    <div class="para">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolorum debitis ratione incidunt nostrum nulla 
+          corrupti suscipit earum quo doloribus. Magni nam, ipsa eos eius aut consequuntur libero adipisci modi.</p>
+    </div>
+    <ol>
+        <li>hello1</li>
+        <li>hello2</li>
+        <li>hello3</li>
+        <li>hello4</li>
+    </ol>
+    <button>Click me</button>
+    <div id="header">
+        <h1> logo</h1>
+        <strong>Developer</strong>
+    </div>
+
+   <div class="card">
+    <h1>hello good sir</h1>
+    <h2>hello lady</h2>
+    <p>iam fine </p>
+
+   </div>
+   <div class="box">
+    <h1>Iam box child</h1>
+
+   </div>
+
+       <div class="box1">
+      <h1>hello jee</h1>
+
+      <div class="c-bx">
+        <h1>sello jee</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </div>
+
+    </div>
+
+  
 </body>
 </html>
+
+<!-- *{
+    color: green;
+    margin , padding , border box
+} -->
