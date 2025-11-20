@@ -3,94 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <title>CSS</title>
-    <!-- <link rel="stylesheet" href="index.css"> -->
+    
     <style>
         * {
             margin: 0;
             padding: 0;
+        }
+
+        article h1{
+            color: blue;
+        }
+
+        h2{
+            color:#F711C8;
+            /*background-color: rgb(100, 180, 30);*/
+            /*background-color: rgba(100, 180, 30,0.5);*/
+            /*background-color:  hsl(248, 53%, 58%);*/
+            background-color:  hsla(248, 53%, 58%,0.5);
+            
 
         }
-       .card h1, h2{
-       color: red;
-       }
 
-       .card p{
-        color: blue;
-       }
+        .box{
+            font-size: 10px;
+        }
+        h3{
+            /*  text-align: justify;*/  
+             /* text-decoration: underline 1px black;
+            text-underline-offset: 6px;*/   /*agadi pachadi,up down,blur*
+            rem vaneko browser /   /*font-size: 2rem;*/
+            text-transform:lowercase;
+            text-indent: 100px;
+            text-shadow: 20px 10px 5px gray;
+            font-size: 2em;
+            font-family: 'Montserrat', sans-serif;
 
-       #header h1{
-        color: yellow;
-       }
+            
+          
+           
+        }
 
-       .box1> h1{
-        color: brown;
-       }
+        .bx{
+            height: 200px;
+            width: 200px;
+            background-color: gray;
+            margin:20px 30px 40px 50px ;
+        }
 
-       .button:enabled{
-        color: red;
-       }
 
-       button:hover{
-        background-color: pink;
-       }
-
-       li:nth-child(odd){
-        color: aqua;
-       }
-
-       .para::before{
-        content: 'Highlight';
-        color:red;
-       }
-
+      
 
       
     </style>
 </head>
 <body>
-    <div class="para">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi dolorum debitis ratione incidunt nostrum nulla 
-          corrupti suscipit earum quo doloribus. Magni nam, ipsa eos eius aut consequuntur libero adipisci modi.</p>
-    </div>
-    <ol>
-        <li>hello1</li>
-        <li>hello2</li>
-        <li>hello3</li>
-        <li>hello4</li>
-    </ol>
-    <button>Click me</button>
-    <div id="header">
-        <h1> logo</h1>
-        <strong>Developer</strong>
-    </div>
+    <!-- semantic html -->
+     <header>
+        <h1>Logo</h1>
+        <nav></nav>
+     </header>
 
-   <div class="card">
-    <h1>hello good sir</h1>
-    <h2>hello lady</h2>
-    <p>iam fine </p>
+     <section class="display section"></section>
 
-   </div>
-   <div class="box">
-    <h1>Iam box child</h1>
+     <article>
+        <h1>hello</h1>
+     </article>
 
-   </div>
+     <h2>hello good sir</h2>
+     <div class="box">
+        <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga provident blanditiis 
+        ratione autem maxime quidem nam doloremque sunt quam illum expedita velit, 
+        quisquam repellat non? At non possimus officia quisquam.</h3>
+        </div>
 
-       <div class="box1">
-      <h1>hello jee</h1>
+        <p>element is in block</p>
+        <span>it is inline</span>
 
-      <div class="c-bx">
-        <h1>sello jee</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
-      </div>
+        <div class="bx">
 
-    </div>
-
-  
-</body>
+        </div>
+    </body> 
 </html>
+<!-- padding gap from inside
+margin gap from outside -->
 
-<!-- *{
-    color: green;
-    margin , padding , border box
-} -->
