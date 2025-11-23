@@ -3,195 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table</title>
+    <title>Document</title>
     <style>
-    form {
-        border: 1px solid #222121;   /* the box border */
-        padding: 8px;            /* space inside the box */
-        width: 250px;             /* adjust size */
-        border-radius: 6px;       /* smooth edges (optional) */
-    }
-</style>
+        .box1{
+            height: 300px;
+            width: 300px;
+            border: 1px solid red;
+            background-color: yellow;
+            position: absolute;
+            left: 40px;
+        }
+         .box2{
+            height: 300px;
+            width: 300px;
+            border: 1px solid red;
+            background-color: lightgray;
+            position: absolute;
+            top: 160px;
+            left: 160px;
+        }
+        .box3{
+            height: 200px;
+            width: 200px;
+            border: 1px solid red;
+            background-color: purple;
+            position: absolute;
+            z-index: 1;
+            left: 60px;
+            top: 50px;
+    
+        }
+        .box5{
+            height: 150px;
+            width: 150px;
+            border: 1px solid red;
+            background-color: lime;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+
+        } 
+         .box4{
+            height: 220px;
+            width: 230px;
+            border: 1px solid red;
+            background-color: coral;
+            position: absolute;
+            z-index: 2;
+            top: 100px;
+            left: 90px;
+         }
+       
+     
+    </style>
 </head>
 <body>
-    <table border="1" cellspacing="0" cellpadding="15">
-       
-        <thead>
-            <tr>
-                <th colspan="5">Community Courses-- Bath Autumn 1997</th>
-            </tr>
-
-            <tr>
-                <th>Course Name</th>
-                <th>Course Tutor</th>
-                <th>Summary</th>
-                <th>Code</th>
-                <th>Fee</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>After the civil War</td>
-                <td>Dr. John Wroughton</td>
-                <td>The coourse will examine the turbulent years in England after 1646.
-                     <em> 6 weekly meetings starting Monday 13th october.</em></td>
-                <td>H26</td>
-                <td>45</td>
-            </tr>
-            <tr>
-                <td>An Introduction to Anglo-Saxon England</td>
-                <td>Mark Cottle</td>
-                <td>One day Course intoducing the early medieval period reconstruction the Anglo-Saxons end their society.
-                     <em>Saturday 18th October.</em> </td>
-                <td>H28</td>
-                <td>18</td>
-            </tr>
-            <tr>
-                <td>The Glory that was Greece</td>
-                <td>Valerie Lorenz</td>
-                <td>Birthplace of the democracy , philosophy, hearland of theater, home of the argument The Romans may have 
-                    done it but the Greeks did it first. <em>Saturday day school 25th October 1997.</em> </td>
-                <td>H30</td>
-                <td>18</td>
-            </tr>
-        </tbody>
-
-    </table>
-    <br>
-
-    <table border="5"  cellpadding="5">
-        <thead>
-            <tr>
-                <th colspan="6">Athletics day time table</th>
-            </tr>
-            <tr>
-                <th>Area</th>
-                <th>10am-11-am</th>
-                <th>11am-12pm</th>
-                <th>12pm-1pm</th>
-                <th>1pm-2pm</th>
-                <th>2pm-3pm</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th rowspan="2">track</th>
-                <td>400m</td>
-                <td>200m</td>
-                <th rowspan="3">lunch</th>
-                <td>800m</td>
-                <td>100m</td>
-            </tr>
-            <tr>
-                <td>Hurdles</td>
-                <td>1500m</td>
-                <td>Free</td>
-                <td>80m</td>
-            </tr>
-            <tr>
-                <th>Field</th>
-                <td>Discus</td>
-                <td>Javelin</td>
-                <td>Shotput</td>
-                <td>Hammer throw</td>
-            </tr>
-        </tbody>
-
-    </table> <br>
-  
-
-    <table border="1" cellspacing="0" cellpadding="20">
-        <caption style=" padding:10px;">Health Chart</caption>
-        
-        <thead> 
-            <tr>
-                <th rowspan="2">State of Health</th>
-                <th colspan="2">Fasting Value</th>
-                <th >After Eating</th>
-            </tr>
-      
-        
-            <tr>
-                <td>Minimun</td>
-                <td>Maximum</td>
-                <td>2 hours after eating</td>
-            </tr>
-         </thead>
-
-        <tbody>
-            <tr>
-                <td>Healthy</td>
-                <td>70</td>
-                <td>100</td>
-                <td>Less than 140</td>
-            </tr>
-            <tr>
-                <td>Pre-Diabetes</td>
-                <td>101</td>
-                <td>126</td>
-                <td>140 t0 200</td>
-            </tr>
-            <tr>
-                <td>Diabetes</td>
-                <td>More than 126</td>
-                <td>N/A</td>
-                <td>More than 200</td>
-            </tr>
-        </tbody>
-
-    </table>
-
-    <h1>World Wide Web</h1>
-    <p>The WorldWideWeb (w3) is a wide are <a href="https://en.wikipedia.org/wiki/Hypermedia" target="_blank">hypermedia</a>
-        information retrieval initiative aiming to give universal access to <br>a large universe of documents. <br><br>
-        Everything there is online about W3 is linked directly or indirectly to this document, including an 
-        <a href="https://en.wikipedia.org/wiki/Executive_summary" target="_blank">executive summary</a><br>
-        of the project,<a href="https://dictionary.cambridge.org/dictionary/english/mailing-list" target="_blank">Mailing lists</a>,
-        <a href="https://dictionary.cambridge.org/dictionary/english/policy" target="_blank">policy</a>
-        ,November'<samp>s</samp><a href="https://www.w3newspapers.com/nepal/" target="_blank">W3 news,</a> 
-        ,<a href="https://en.wikipedia.org/wiki/FAQ" target="_blank">Frequently Asked Questions</a><br><br>
-        <a href="https://dictionary.cambridge.org/dictionary/english/out-there" target="_blank">What's out there?</a><br>&emsp;Pointers to the world's online information, 
-        <a href="https://dictionary.cambridge.org/dictionary/english/subject" target="_blank">Subject</a>,
-        <a href="https://www.w3.org/History/19921103-hypertext/hypertext/DataSources/WWW/Servers.html" target="_blank">W3 Servers</a>, etc <br>
-        <a href="https://dictionary.cambridge.org/dictionary/english/help" target="_blank">Help</a><br>&emsp;other the browser you are using <br> 
-        <a href="https://dictionary.cambridge.org/dictionary/english/technical" target="_blank">technical</a> <br> &emsp;Details of protocols, formats, program internals etc <br>
-        <a href="https://dictionary.cambridge.org/dictionary/english/technical" target="_blank">Bibliography</a><br>&emsp;Paper documentation on W3 and reference. <br> 
-        <a href="https://dictionary.cambridge.org/dictionary/english/people" target="_blank">People</a> <br>&emsp;A list of some people involved in the project <br>
-        <a href="https://dictionary.cambridge.org/dictionary/english/history" target="_blank">History</a><br> &emsp;A summary of the history of theproject. <br> 
-        <a href="https://www.quora.com/Whats-the-meaning-of-How-can-I-help-you" target="_blank">How can I help?</a> <br> &emsp;
-        If you would like to support the web. <br> <a href="" target="_blank">Getting code</a> <br>&emsp; Getting the code by 
-        <a href="https://www.geeksforgeeks.org/computer-networks/what-is-anonymous-ftp-file-transfer-protocol/" target="_blank">anonymour FTP</a>, etc.
-    </p>
-
-    <form  action="">
-        <h3>Personal Information</h3>
+    <div class="box1">
+        <div class="box3"></div>
+    </div>
+    <div class="box2">
+        <div class="box4"></div>
+        <div class="box5"></div>
+    </div>
     
-            <label for="fname">First Name</label> <br>
-            <input required type="text" id="fname" name="firstname" placeholder="Stephanie">
-            <p>
-            <label for="lname">Last Name</label> <br>
-            <input required type="text" id="lname" name="lastname" placeholder="Walter">
-            </p>
-            <h3>Contact Information</h3>
-            <label for="address">Address</label><br>
-            <input required type="text" name="Add" id="address" placeholder="23 rue des etoiles">
-            <p>
-                <label for="city">City</label><br>
-                <input required type="text" name="City" id="city" placeholder="Luxembourg">
-            </p>
-            <p>
-                <label for="zipcode">Zip Code</label><br>
-                <input required type="number" name="zcode" id="zipcode" placeholder="1160">
-            </p>
-            <label for="country">Country</label><br>
-            <select required name="nation" id="country">
-                <option value="france">France</option>
-                <option value="switzerland">switzerland</option>
-                <option value="monaco">Monaco</option>
-                <option value="sweden">Sweden</option>
-            </select><br><br>
-            <button type="submit">Submit</button>
-        
-    </form>
+    
 </body>
 </html>

@@ -3,13 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Page</title>
+    <title>Position</title>
+    <style>
+        .parent {
+            height: 500px;
+            width: 500px;
+            background-color: lightgray;
+        }
+        .box1{
+            background-color: rgb(134, 69, 218);
+            height: 150px;
+            width: 150px;
+            border: 3px solid;
+        }
+        .box2{
+            background-color: rgb(134, 69, 218);
+            height: 150px;
+            width: 150px;
+            border: 3px solid black;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+
+        }
+        .box3{
+            background-color: rgb(134, 69, 218);
+            height: 150px;
+            width: 150px;
+            border: 3px solid black;
+        }
+    </style>
 </head>
 <body>
-    <!-- download link -->
-    <a href="assets/240015_AnishaGC.pdf" download="Worked.pdf">Download</a>
-
-    <!-- email link -->
-     <a href="mailto:gcanisha4@gmail.com">email us</a>
+    <div class="parent">
+        <div class="box1">box 1</div>
+        <div class="box2">box 2</div>
+        <div class="box3">box 3</div>
+    </div>
+    
 </body>
-</html>  
+</html>
