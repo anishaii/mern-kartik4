@@ -1,0 +1,152 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .parent {
+            height: 700px;
+            width: 900px;
+            display: grid;
+            gap: 13px;
+            grid-template-columns: 2fr 2fr 2fr;
+            border-radius: 10px;
+            position: absolute;     /* ← add these 4 lines instead */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+         .box1{
+            background-color:hsl(261, 88%, 62%);
+            border-radius: 10px;
+
+        }
+        .box2{
+            background-color: #0E6AFF;
+            border-radius: 10px;
+        }
+        .box3{
+            background-color: #064797;
+            border-radius: 10px;
+        }
+        .box4{
+            
+            border-radius: 10px;
+        }
+
+        .box5{
+           
+            border-radius: 10px;
+        }
+        .box6{
+            
+            border-radius: 10px;
+        }
+        .box4, .box5, .box6{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+        button {
+            margin: 20px 10px;
+            padding: 5px 10px;
+            border: none;
+            border:2px solid #0E6AFF;
+            background-color: white;
+            border-radius: 40px;
+            color:#0E6AFF ;
+
+        }
+        .btn {
+            margin: 20px 10px;
+            padding: 5px 10px;
+            border: none;
+            border:2px solid white;
+            background-color: #8347f3;;
+            border-radius: 40px;
+            color:white ;
+            
+        }
+        .btn2 {
+            margin: 20px 10px;
+            padding: 5px 10px;
+            border: none;
+            border:2px solid white;
+            background-color: #0E6AFF;
+            border-radius: 40px;
+            color:white ;
+        }
+         .btn3 {
+            margin: 20px 10px;
+            padding: 5px 10px;
+            border: none;
+            border:2px solid white;
+            background-color: #064797;
+            border-radius: 40px;
+            color:white ;
+        }
+        .bx {
+            color: white;
+        }
+        .topic{
+            color: black;
+        }
+        h3 {
+            margin:8px;
+            margin-bottom: 25px;
+        }
+        p {
+              margin:8px;
+              font-size: 14px;
+        }
+        .para{
+            color: black;
+            
+        }
+    </style>
+
+ </head>
+ <body>
+<div class="parent">
+    <div class="bx box1">
+        <button class="btn">WHAT'S NEW</button>
+        <h3>Our Video Conference Integrations Are Now Free-Forever</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat illo blanditiis sit in illum aut corporis dolore, saepe et itaque?</p>
+    </div>
+    <div class="bx box2">
+        <button class="btn2">CREATING CALENDLY</button>
+         <h3>What working from home is really like during a pandemic</h3>
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque quam assumenda cum minus iusto autem eaque aliquid eveniet quia! Autem.</p>
+    </div>
+    <div class="bx box3">
+        <button class="btn3">SALES</button>
+        <h3>Convert 60% more PPc leads into bookings using Black Propeller's secret weapon</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo voluptatum impedit libero voluptatibus culpa corporis, aliquid iste veniam? Optio, ex.</p>
+    </div>
+    <div class="bx box4">
+        <button>SALES</button>
+        <h3 class="topic">Deploying virtual appointments on your retail website</h3>
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates repellendus repellat fugit tempore, sequi voluptatem non autem maiores pariatur sint.</p>
+
+    </div>
+    <div class="bx box5">
+        <button>CUSTOMER STORIES</button>
+        <h3 class="topic">Accelerated saled cycle picks up new B2B partners for Lyft</h3>
+        <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad rem nemo enim, cum magnam dolore sunt vitae dolor illum labore.</p>
+    </div>
+    <div class="bx box6">
+        <button>CREATING CALENDLY</button>
+        <h3 class="topic">Motherly advice from Calendly employees</h3>
+        <p class="para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque cum ab dolores tenetur deleniti accusantium deserunt, ad ipsa ullam magnam?</p>
+    </div>
+</div>
+ </body>
+ </html>

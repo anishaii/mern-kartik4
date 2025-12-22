@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .parent {
+            height: 500px;
+            width: 700px;
+           
+            margin: 0 auto;
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+           
+           
+            
+        }
+        .box1{
+            background-color:#E32F77 ;
+            grid-column: span 2;
+            border: 2px solid black;
+        }
+        .box2{
+            background-color: #F2EE78;
+            grid-row: span 3;
+            border: 2px solid black;
+        }
+        .box3{
+            background-color: #E2A880;
+            grid-row: span 2;
+            border: 2px solid black;
+        }
+        .box4{
+            background-color: #C75FF5;
+            border: 2px solid black;
+        }
+        .box1, .box2, .box3, .box4 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body> 
+    <div class="parent">
+        <div class="box1">Header</div>
+        <div class="box2">Nav</div>
+        <div class="box3">Content</div>
+        <div class="box4">Footer</div>
+    </div>  
+</body>
+</html>
