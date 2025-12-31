@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+
+@theme {
+    /* --color-*:initial;  overide tailwind builtin color*/
+ --color-browny: #D1855C;
+
+}
