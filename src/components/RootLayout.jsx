@@ -8,6 +8,15 @@ import { SlDiamond } from "react-icons/sl";
 import Color from './Color';
 
 const RootLayout = () => {
+    const colors = [
+    { name: "Red", bg: "bg-red-500" },
+    { name: "Blue", bg: "bg-blue-500" },
+    { name: "Blue Grey", bg: "bg-slate-500" },
+    { name: "Teal", bg: "bg-teal-500" },
+    { name: "Yellow", bg: "bg-yellow-400" },
+    { name: "Orange", bg: "bg-orange-500" },
+  ];
+
   return (
     <div>
         <Header />
@@ -55,6 +64,7 @@ const RootLayout = () => {
         <div>
           <Color
           titles={'Color'}
+          colors={colors}
 
           />
         </div>
