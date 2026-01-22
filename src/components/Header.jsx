@@ -1,11 +1,18 @@
-import { FiAlignJustify } from "react-icons/fi";
-const Header = () => {
+import { MedalIcon } from "lucide-react";
+
+export default function Header() {
   return (
-    <div className="bg-black text-white px-5 py-5 flex  items-baseline justify-between">
-      <FiAlignJustify size={30} />
-     
+    <div className=" px-5 text-white py-2 flex items-baseline justify-between">
+
+
+      <div className="flex items-center gap-3">
+
+        <MedalIcon size={50} />
+        <h1>The MealDB</h1>
+
+      </div>
+
+
     </div>
   )
 }
-
-export default Header
