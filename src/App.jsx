@@ -3,8 +3,7 @@ import { RouterProvider } from 'react-router-dom';
 import NotFound from './pages/not-found/NotFound';
 import RootLayout from './components/RootLayout';
 import Home from './pages/home/Home';
-import Meal from './pages/meals/Meal';
-import MealList from './pages/meals/MealList';
+import TodoAddForm from './pages/todos/TodoAddForm';
 
 
 
@@ -20,19 +19,12 @@ export default function App() {
           index: true,
           element: <Home />
         },
-
-        {
-          path: 'meal/:id',
-          element: <Meal />
-
+          {
+          path:'add-todo',
+          element: <TodoAddForm/>
         },
 
         {
-          path: 'meal-list/:category',
-          element: <MealList />
-        },
-
-         {
            path: '*',
            element: <NotFound />
          }
