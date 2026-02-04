@@ -10,6 +10,10 @@ import { Textarea } from "../../components/ui/textarea.jsx";
 import { Switch } from "../../components/ui/switch.jsx";
 import { Field, FieldGroup } from "../../components/ui/field.jsx";
 import { Checkbox } from "../../components/ui/checkbox.jsx";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
+import { addTodo } from "./todoSlice.js";
+import { nanoid } from "@reduxjs/toolkit";
 
 const todoSchema = Yup.object({
   email: Yup.string().email().required(),
@@ -18,20 +22,22 @@ const todoSchema = Yup.object({
   message: Yup.string().min(10).max(200).required(),
   airplanemode: Yup.boolean().required(),
   habits: Yup.array().min(1).required(),
-  image: Yup.mixed().test('fileType', 'Invalid file type', (val) => {
-    return val && [
-      'image/jpeg',
-      'image/png',
-      'image/gif',
-      'image/webp',
-      'image/jpg'
-    ].includes(val.type);
+  // image: Yup.mixed().test('fileType', 'Invalid file type', (val) => {
+  //   return val && [
+  //     'image/jpeg',
+  //     'image/png',
+  //     'image/gif',
+  //     'image/webp',
+  //     'image/jpg'
+  //   ].includes(val.type);
 
-  }).required(),
+  // }).required(),
 });
 
 
 export default function TodoAddFrom() {
+  const dispatch = useDispatch();
+  const nav = useNavigate();
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
@@ -52,12 +58,13 @@ export default function TodoAddFrom() {
             message: '',
             airplanemode: false,
             habits: [],
-            image: '',
-            imageReview: ''
+            // image: '',
+            // imageReview: ''
           }}
 
           onSubmit={(val) => {
-            console.log(val);
+           dispatch(addTodo({...val, id: nanoid()}));
+           nav(-1);
 
           }}
           validationSchema={todoSchema}
@@ -194,7 +201,7 @@ export default function TodoAddFrom() {
                   {errors.habits && touched.habits && <div className="text-red-500">{errors.habits}</div>}
                   </div>
 
-
+{/* 
                 <div>
                   <Input
                     className={'mb-4'}
@@ -212,7 +219,7 @@ export default function TodoAddFrom() {
 
                   {values.imageReview && !errors.image && <img src={values.imageReview} alt="" />}
                   {errors.image && touched.image && <div className="text-red-500">{errors.image}</div>}
-                </div>
+                </div> */}
 
 
 
