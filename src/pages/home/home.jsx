@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { EditIcon, TrashIcon } from "lucide-react";
 import { useSelector } from "react-redux"
+import DeleteTodo from "../todos/DeleteTodo";
 
 export default function Home() {
 
@@ -18,7 +19,8 @@ export default function Home() {
 
         <div className="mt-3 flex gap-5">
           <Button variant="outline"><EditIcon/> </Button>
-          <Button variant="outline"><TrashIcon/> </Button>
+          <DeleteTodo id={todo.id} />
+         
 
         </div>
 
