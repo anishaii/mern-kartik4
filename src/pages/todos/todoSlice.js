@@ -19,13 +19,21 @@ export const todoSlice = createSlice({
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
 
       setTodoToLocal(state.todos);
+    },
+
+    updateTodo: (state, action) => {
+      state.todos = state.todos.map((todo) => {
+        if(todo.id === action.payload.id) {
+          return action.payload;
+        }
+        return todo;
+      })
+
     }
-
-
-
 
   }
 
+
 });
 
-export const {addTodo , removeTodo} = todoSlice.actions;
+export const {addTodo , removeTodo, updateTodo} = todoSlice.actions;

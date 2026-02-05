@@ -15,7 +15,7 @@ import { useNavigate } from "react-router";
 import { addTodo } from "./todoSlice.js";
 import { nanoid } from "@reduxjs/toolkit";
 
-const todoSchema = Yup.object({
+export const todoSchema = Yup.object({
   email: Yup.string().email().required(),
   gender: Yup.string().required(),
   country: Yup.string().required(),
