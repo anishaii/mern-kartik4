@@ -1,234 +1,139 @@
 import { Formik } from "formik";
 import { Button } from "../../components/ui/button.jsx";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card.jsx";
+import {Card,CardContent,CardDescription,CardHeader,CardTitle,} from "../../components/ui/card.jsx";
 import { Input } from "../../components/ui/input.jsx";
 import { Label } from "../../components/ui/label.jsx";
-import { RadioGroup, RadioGroupItem } from "../../components/ui/radio-group.jsx";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "../../components/ui/select.jsx";
 import { Textarea } from "../../components/ui/textarea.jsx";
-import { Switch } from "../../components/ui/switch.jsx";
-import { Field, FieldGroup } from "../../components/ui/field.jsx";
-import { Checkbox } from "../../components/ui/checkbox.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { todoSchema } from "./TodoAddForm.jsx";
 import { updateTodo } from "./todoSlice.js";
 
-
 export default function UpdateTodo() {
   const { id } = useParams();
-  const { todos } = useSelector((state) => state.todoSlice);
-
-  const todo = todos.find((todo) => todo.id === id);
-
-
-
-
-
   const dispatch = useDispatch();
   const nav = useNavigate();
+
+  const todo = useSelector((state) =>
+    state.todoSlice.todos.find((t) => t.id === id)
+  );
+
+  if (!todo) {
+    return <p className="p-5">Todo not found</p>;
+  }
 
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
-        <CardTitle>Add Some Todos</CardTitle>
-        <CardDescription>
-          Enter some details
-        </CardDescription>
-
+        <CardTitle>Update Post</CardTitle>
+        <CardDescription>Edit your post</CardDescription>
       </CardHeader>
+
       <CardContent>
-
-
         <Formik
           initialValues={{
-            email: todo.email,
-            gender: todo.gender,
-            country: todo.country,
+            title: todo.title,
             message: todo.message,
-            airplanemode: todo.airplanemode,
-            habits: todo.habits,
-          }}
-
-          onSubmit={(val) => {
-            dispatch(updateTodo({ ...val, id }));
-            nav(-1);
-
+            author: todo.author,
+            image: todo.image,
+            imageReview: todo.imageReview,
           }}
           validationSchema={todoSchema}
+          onSubmit={(values) => {
+            dispatch(updateTodo({ ...todo, ...values }));
+            nav(-1);
+          }}
         >
-
-
-          {({ handleChange, handleSubmit, values, errors, touched, setFieldValue }) => (
+          {({
+            handleChange,
+            handleSubmit,
+            values,
+            errors,
+            touched,
+            setFieldValue,
+          }) => (
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col gap-6">
 
+               
                 <div className="grid gap-2">
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="title">Title</Label>
                   <Input
-                    id="email"
-                    name="email"
+                    id="title"
+                    name="title"
+                    value={values.title}
                     onChange={handleChange}
-                    value={values.email}
-                    placeholder="m@example.com"
-
                   />
-                  {errors.email && touched.email && <div className="text-red-500">{errors.email}</div>}
-                </div>
-
-                <div className="grid gap-2">
-                  <Label htmlFor="gender">Select Your Gender</Label>
-                  <RadioGroup
-                    name="gender"
-                    value={values.gender}
-                    onValueChange={(value) => setFieldValue("gender", value)}
-                    className="w-fit mt-2">
-
-                    <div className="flex items-center gap-3">
-                      <RadioGroupItem
-
-
-                        value="male" id="r2" />
-                      <Label htmlFor="r2">Male</Label>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <RadioGroupItem
-
-                        value="female" id="r3" />
-                      <Label htmlFor="r3">Female</Label>
-                    </div>
-                  </RadioGroup>
-
-                  {errors.gender && touched.gender && <div className="text-red-500">{errors.gender}</div>}
-                </div>
-
-
-                <div className="grid gap-2">
-                  <Label htmlFor="country">Select Your Country</Label>
-                  <Select
-                    name="country"
-                    defaultValue={values.country}
-                    onValueChange={(e) => setFieldValue("country", e)}
-                  >
-                    <SelectTrigger className="w-full max-w-48">
-                      <SelectValue
-
-                        placeholder="Select country" />
-                    </SelectTrigger>
-                    <SelectContent
-
-                    >
-                      <SelectGroup>
-                        <SelectLabel>Country</SelectLabel>
-                        <SelectItem value="nepal">Nepal</SelectItem>
-                        <SelectItem value="india">India</SelectItem>
-                        <SelectItem value="china">China</SelectItem>
-
-                      </SelectGroup>
-                    </SelectContent>
-                  </Select>
-
-                  {errors.country && touched.country && <div className="text-red-500">{errors.country}</div>}
-
-
-
+                  {errors.title && touched.title && (
+                    <div className="text-red-500">{errors.title}</div>
+                  )}
                 </div>
 
                 <div>
+                  <Label>Detail Information</Label>
                   <Textarea
                     name="message"
-                    onChange={handleChange}
                     value={values.message}
-                    placeholder="Type your message here." />
-                  {errors.message && touched.message && <div className="text-red-500">{errors.message}</div>}
+                    onChange={handleChange}
+                  />
+                  {errors.message && touched.message && (
+                    <div className="text-red-500">{errors.message}</div>
+                  )}
                 </div>
 
-                <div className="flex items-center space-x-2">
-                  <Switch
-                    checked={values.airplanemode}
-                    name="airplanemode"
-                    onCheckedChange={(e) => setFieldValue("airplanemode", e)}
-                    id="airplane-mode" />
-                  <Label htmlFor="airplane-mode">Airplane Mode</Label>
-                </div>
-
-
-
-
+       
                 <div>
+                  <Label>Image</Label>
+                  <Input
+                    type="file"
+                    onChange={(e) => {
+                      const file = e.target.files[0];
+                      if (!file) return;
 
-                  <Label htmlFor="habits">Select Your Habits</Label>
+                      const url = URL.createObjectURL(file);
+                      setFieldValue("image", file);
+                      setFieldValue("imageReview", url);
+                    }}
+                  />
 
-                  <FieldGroup
+                  {values.imageReview && (
+                    <img
+                      src={values.imageReview}
+                      alt=""
+                      className="mt-2 h-40 w-full object-cover rounded"
+                    />
+                  )}
 
-                    className="max-w-sm mt-4">
-                    <Field orientation="horizontal">
-                      <Checkbox
-                        checked={values.habits.includes("Dance")}
-                        onCheckedChange={(e) => {
-                          const currentHabits = values.habits
-                          if (e === true) {
-                            setFieldValue("habits", [...currentHabits, "Dance"])
-                          } else {
-                            setFieldValue("habits", currentHabits.filter((item) => item !== "Dance"))
-                          }
-                        }}
-                        id="habits"
-
-
-                        value="Dance"
-                        name="habits" />
-                      <Label htmlFor="habits">Dance</Label>
-                    </Field>
-
-                    <Field orientation="horizontal">
-                      <Checkbox
-                        checked={values.habits.includes("Sing")}
-                        onCheckedChange={(e) => {
-                          const currentHabits = values.habits
-                          if (e === true) {
-                            setFieldValue("habits", [...currentHabits, "Sing"])
-                          } else {
-                            setFieldValue("habits", currentHabits.filter((item) => item !== "Sing"))
-                          }
-                        }}
-                        id="terms-checkbox"
-                        value="Sing"
-                        name="habits" />
-                      <Label htmlFor="terms-checkbox">Sing</Label>
-                    </Field>
-
-
-                  </FieldGroup>
-                  {errors.habits && touched.habits && <div className="text-red-500">{errors.habits}</div>}
-
+                  {errors.image && touched.image && (
+                    <div className="text-red-500">{errors.image}</div>
+                  )}
                 </div>
 
-
-
-
-
-
-
-
+                <div className="grid gap-2">
+                  <Label htmlFor="author">Author</Label>
+                  <Input
+                    id="author"
+                    name="author"
+                    value={values.author}
+                    onChange={handleChange}
+                  />
+                  {errors.author && touched.author && (
+                    <div className="text-red-500">{errors.author}</div>
+                  )}
+                </div>
 
               </div>
-              <Button type="submit" className=" mt-7 w-full">
-                Submit
+
+              <Button
+                type="submit"
+                className="mt-7 w-full bg-amber-500 text-black"
+              >
+                Update
               </Button>
             </form>
-
           )}
-
-
-
-
-
         </Formik>
-
-
       </CardContent>
-
     </Card>
-  )
+  );
 }
