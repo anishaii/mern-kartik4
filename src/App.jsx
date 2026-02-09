@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router'
 import { RouterProvider } from 'react-router-dom';
-import NotFound from './pages/not-found/NotFound';
+import NotFound from './features/not-found/NotFound';
 import RootLayout from './components/RootLayout';
-import Home from './pages/home_page/Home';
+import Home from './features/home_page/Home';
 
 export default function App() {
  

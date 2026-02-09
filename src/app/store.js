@@ -1,9 +1,15 @@
-import { todoSlice } from "@/pages/todos/todoSlice";
 import { configureStore } from "@reduxjs/toolkit";
+import { blogApi } from "../features/blogs/blogApi.js";
 
 
 export const store = configureStore({
-    reducer: {
-    [todoSlice.name]: todoSlice.reducer
-    }
+  reducer: {
+    [blogApi.reducerPath]: blogApi.reducer
+
+
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat([
+      blogApi.middleware
+    ]),
 });
