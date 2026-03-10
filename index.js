@@ -7,13 +7,15 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv'
 import morgan from 'morgan';
 import fileUpload from 'express-fileupload';
+import cors from 'cors';
+
 
 dotenv.config({
   quiet: true
 });
-
+app.use(cors());
 app.use(express.json());
-
+app.use(express.static('uploads'));
 app.use(morgan('dev'));
 
 app.use(fileUpload({
