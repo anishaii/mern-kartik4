@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./features/home/Home.jsx";
 import Rootlayout from "./components/RootLayout.jsx";
+import Login from "./features/auth/Login.jsx";
 
 
 export default function App() {
@@ -14,6 +15,10 @@ export default function App() {
         {
           index: true,
           element: <Home/>
+        },
+        {
+          path:'login',
+          element: <Login/>
         }
 
       ]
