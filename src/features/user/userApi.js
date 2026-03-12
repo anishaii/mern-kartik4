@@ -16,7 +16,18 @@ const userApi = mainApi.injectEndpoints({
         url: '/users/profile',
         headers: {Authorization : q},
         method: 'GET'
-      })
+      }),
+      providesTags:['Profile']
+    }),
+
+    updateUser: builder.mutation({
+      query: (q) => ({
+        url: '/users/profile',
+        body: q.body,
+        headers: {Authorization : q.token},
+        method: 'PATCH'
+      }),
+      invalidatesTags: ['Profile']
     }),
 
   
@@ -29,4 +40,4 @@ const userApi = mainApi.injectEndpoints({
 });
 
 
-export const { useGetProfileQuery} = userApi;
+export const { useGetProfileQuery, useUpdateUserMutation } = userApi;
