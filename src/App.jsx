@@ -4,6 +4,10 @@ import Rootlayout from "./components/RootLayout.jsx";
 import Login from "./features/auth/Login.jsx";
 import Register from "./features/auth/Register.jsx";
 import UserProfile from "./features/user/UserProfile.jsx";
+import AdminPage from "./features/admin/AdminPage.jsx";
+import Add from "./features/admin/form/Add.jsx";
+import Edit from "./features/admin/form/Edit.jsx";
+import ProductDetail from "./features/products/ProductDetail.jsx";
 
 
 export default function App() {
@@ -30,7 +34,23 @@ export default function App() {
           path: 'profile',
           element: <UserProfile/>
         },
-
+        {
+          path: 'admin',
+          element: <AdminPage/>
+        },
+        {
+          path: 'admin/form/add',
+          element: <Add/>
+        },
+       {
+          path: 'admin/form/edit/:id',
+          element: <Edit/>
+        },
+        {
+          path: 'product/:id',
+          element: <ProductDetail/>
+        }
+        
       ]
     }
   ]);

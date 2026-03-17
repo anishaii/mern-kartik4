@@ -3,8 +3,11 @@ import { Badge } from "../../components/ui/badge.jsx";
 import { Card, CardContent } from "../../components/ui/card.jsx";
 import { useGetProductsQuery } from "./productApi.js"
 import { base } from "../../app/mainApi.js";
+import { useNavigate } from "react-router";
 
 export default function ProductList() {
+
+  const nav = useNavigate();
 
   const { data, isLoading, error } = useGetProductsQuery();
 
@@ -21,8 +24,9 @@ export default function ProductList() {
 
       {data.map((product) => (
         <Card
+        onClick={()=> nav(`/product/${product._id}`)}
           key={product._id}
-          className="group overflow-hidden rounded-2xl border shadow-sm hover:shadow-2xl transition-all duration-300"
+          className="group overflow-hidden rounded-2xl border shadow-sm hover:shadow-2xl cursor-pointer transition-all duration-300"
         >
           {/* Image */}
           <div className="relative h-60 w-full overflow-hidden">

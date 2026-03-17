@@ -16,8 +16,11 @@ export default function Header() {
 
         </NavLink>
 
+       <NavLink to={'/register'}>
+         <Button className={'bg-blue-500'}>SignUp</Button>
+
+       </NavLink>
        
-        <Button className={'bg-blue-500'}>SignUp</Button>
 
       </nav> }
 
