@@ -19,5 +19,9 @@ export const userCheck = (req, res, next) => {
     return res.status(401).json({ message: "Unauthorized" });
   }
 
+}
 
+export const adminCheck = (req, res, next) => {
+  if (req.userRole !== "admin") return res.status(403).json({ message: "Forbidden" });
+  next();
 }
