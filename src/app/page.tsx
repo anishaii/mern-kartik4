@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import axios from "axios";
+// import axios from "axios";
 
 export const metadata: Metadata = {
   title: "Home Page",
@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 
 const Home = () => {
 
-  const response = await axios.get('https://jsonplaceholder.typicode.com/comments');
+  // const response = await axios.get('https://jsonplaceholder.typicode.com/comments');
 
-  const posts: Post[] = response.data;
+  // const posts: Post[] = response.data;
   return (
     <div>
       
