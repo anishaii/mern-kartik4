@@ -1,6 +1,9 @@
-interface Post {
+export interface Post {
   id: number;
   postId: number;
-  name: String; 
+  name: string; 
+  body: string;
+  email: string;
+
 
 }
